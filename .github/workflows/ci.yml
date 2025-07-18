@@ -4,15 +4,18 @@ jobs:
   test_python_app:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout to the code
-      uses: actions/checkout@v4
-      -name: install python
-      uses: actions/setup-python@v4
-      with: 
-        python-version: "3.10"
-      -name: install  pytest 
-      run: pip install flask pytest
-      -name: run test_app
-      run: pytest test_app.py -v
+      - name: Checkout to the code
+        uses: actions/checkout@v4
+      
+      - name: install python
+        uses: actions/setup-python@v4
+        with: 
+          python-version: "3.10"
+        
+      - name: install  pytest 
+        run: pip install flask pytest
+      
+      - name: run test_app
+        run: pytest test_app.py -v
 
 
